@@ -13,10 +13,10 @@ export function computeBalances(members, expenses) {
       bal[key] = (bal[key] || 0) - share;
     }
 
-    if (!(exp.paidBy in shares) && !(String(exp.paidBy) in shares)) {
-      const n = exp.splitWith.length || 1;
-      bal[exp.paidBy] -= Number(exp.amount) / n;
-    }
+    // if (!(exp.paidBy in shares) && !(String(exp.paidBy) in shares)) {
+    //   const n = exp.splitWith.length || 1;
+    //   bal[exp.paidBy] -= Number(exp.amount) / n;
+    // }
   }
 
   return bal;
@@ -25,3 +25,4 @@ export function computeBalances(members, expenses) {
 export function totalSpent(expenses) {
   return expenses.reduce((s, e) => s + Number(e.amount), 0);
 }
+
